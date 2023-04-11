@@ -4,12 +4,11 @@ const amplifyconfig = ''' {
     "api": {
         "plugins": {
             "awsAPIPlugin": {
-                "mytrips": {
+                "tnttrips": {
                     "endpointType": "GraphQL",
-                    "endpoint": "https://6k5tt2zztjejzjdneg3yzuay4i.appsync-api.us-east-1.amazonaws.com/graphql",
+                    "endpoint": "https://o5arhaopu5hadeha2bzcwhvzte.appsync-api.us-east-1.amazonaws.com/graphql",
                     "region": "us-east-1",
-                    "authorizationType": "API_KEY",
-                    "apiKey": "da2-iomrbgwxyverrkcha36txgl4cu"
+                    "authorizationType": "AMAZON_COGNITO_USER_POOLS"
                 }
             }
         }
@@ -25,15 +24,15 @@ const amplifyconfig = ''' {
                 "CredentialsProvider": {
                     "CognitoIdentity": {
                         "Default": {
-                            "PoolId": "us-east-1:c4b3b80a-2f16-4e7f-b1eb-009ce1340fef",
+                            "PoolId": "us-east-1:15ed516d-fe8d-42f3-8664-1f2be54c6ff5",
                             "Region": "us-east-1"
                         }
                     }
                 },
                 "CognitoUserPool": {
                     "Default": {
-                        "PoolId": "us-east-1_MCksVRkJX",
-                        "AppClientId": "5c8tclnjlfcb8684vov0nr9vsr",
+                        "PoolId": "us-east-1_kk7NAs1HL",
+                        "AppClientId": "3gk3uok8l2r0rv03mmvnh677tu",
                         "Region": "us-east-1"
                     }
                 },
@@ -62,22 +61,15 @@ const amplifyconfig = ''' {
                 },
                 "AppSync": {
                     "Default": {
-                        "ApiUrl": "https://6k5tt2zztjejzjdneg3yzuay4i.appsync-api.us-east-1.amazonaws.com/graphql",
-                        "Region": "us-east-1",
-                        "AuthMode": "API_KEY",
-                        "ApiKey": "da2-iomrbgwxyverrkcha36txgl4cu",
-                        "ClientDatabasePrefix": "mytrips_API_KEY"
-                    },
-                    "mytrips_AMAZON_COGNITO_USER_POOLS": {
-                        "ApiUrl": "https://6k5tt2zztjejzjdneg3yzuay4i.appsync-api.us-east-1.amazonaws.com/graphql",
+                        "ApiUrl": "https://o5arhaopu5hadeha2bzcwhvzte.appsync-api.us-east-1.amazonaws.com/graphql",
                         "Region": "us-east-1",
                         "AuthMode": "AMAZON_COGNITO_USER_POOLS",
-                        "ClientDatabasePrefix": "mytrips_AMAZON_COGNITO_USER_POOLS"
+                        "ClientDatabasePrefix": "tnttrips_AMAZON_COGNITO_USER_POOLS"
                     }
                 },
                 "S3TransferUtility": {
                     "Default": {
-                        "Bucket": "mytrips8fecd4972caf45cea0b99bcbf2845d2d162511-mydev",
+                        "Bucket": "tnttrips402aaf2f462a4f3f8252d3ee23ac5102212953-tntdev",
                         "Region": "us-east-1"
                     }
                 }
@@ -87,7 +79,7 @@ const amplifyconfig = ''' {
     "storage": {
         "plugins": {
             "awsS3StoragePlugin": {
-                "bucket": "mytrips8fecd4972caf45cea0b99bcbf2845d2d162511-mydev",
+                "bucket": "tnttrips402aaf2f462a4f3f8252d3ee23ac5102212953-tntdev",
                 "region": "us-east-1",
                 "defaultAccessLevel": "guest"
             }
