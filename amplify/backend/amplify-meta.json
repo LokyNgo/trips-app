@@ -1,0 +1,109 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifytripsplanner-dev-150438-authRole",
+      "UnauthRoleArn": "arn:aws:iam::067907718005:role/amplify-amplifytripsplanner-dev-150438-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::067907718005:role/amplify-amplifytripsplanner-dev-150438-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplifytripsplanner-dev-150438-deployment",
+      "UnauthRoleName": "amplify-amplifytripsplanner-dev-150438-unauthRole",
+      "StackName": "amplify-amplifytripsplanner-dev-150438",
+      "StackId": "arn:aws:cloudformation:us-east-1:067907718005:stack/amplify-amplifytripsplanner-dev-150438/db40b3b0-d51a-11ed-9c32-0e9c2d305597",
+      "AmplifyAppId": "d1f6i7wtq8kp9r"
+    }
+  },
+  "auth": {
+    "amplifytripsplannere57d0b5c": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifytripsplanner-dev-150438-deployment/amplify-cfn-templates/auth/amplifytripsplannere57d0b5c-cloudformation-template.json",
+        "logicalId": "authamplifytripsplannere57d0b5c"
+      },
+      "lastPushTimeStamp": "2023-04-07T09:34:18.464Z",
+      "output": {
+        "UserPoolId": "us-east-1_ChHM1c14n",
+        "AppClientIDWeb": "440oadds9t2n6d25kuf4g0n4eh",
+        "AppClientID": "1lt6btp21376merrl7038j8b0q",
+        "IdentityPoolId": "us-east-1:2f5a0dc2-40b4-4ffb-9154-ba055a0b7331",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:067907718005:userpool/us-east-1_ChHM1c14n",
+        "IdentityPoolName": "amplifytripsplannere57d0b5c_identitypool_e57d0b5c__dev",
+        "UserPoolName": "amplifytripsplannere57d0b5c_userpool_e57d0b5c"
+      },
+      "lastPushDirHash": "e6q2c4t5xHw/gLkXHbF/KudOw2I="
+    }
+  },
+  "api": {
+    "amplifytripsplanner": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "amplifytripsplannere57d0b5c",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authamplifytripsplannere57d0b5c"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "zzbxxskmlzajfh4gkr3yu7d73i",
+        "GraphQLAPIEndpointOutput": "https://whneemadnrdkjodcngbmmv3zbu.appsync-api.us-east-1.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifytripsplanner-dev-150438-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiamplifytripsplanner"
+      },
+      "lastPushTimeStamp": "2023-04-07T09:34:20.190Z",
+      "lastPushDirHash": "Oi+oOYy4nYp+D8c9IxXKuud3DL4="
+    }
+  },
+  "storage": {
+    "s3757c69ca": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2023-04-07T09:34:18.473Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifytripsplanner-dev-150438-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storages3757c69ca"
+      },
+      "output": {
+        "BucketName": "amplifytripsplannerfee9472c6d3d4611b409fb0595c1150438-dev",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "+yOp+z+ksNz2Es/yabeTp68IxZA="
+    }
+  }
+}

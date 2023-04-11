@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "amplifytripsplanner",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authamplifytripsplannere57d0b5c",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-amplifytripsplanner-dev-150438-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/1a57089942610566dc4b25852ecca20815a48c90"
+}
