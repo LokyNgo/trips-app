@@ -1,23 +1,30 @@
 {
   "api": {
-    "amplifytripsplanner": {
+    "mytrips": {
       "dependsOn": [
         {
           "attributes": [
             "UserPoolId"
           ],
           "category": "auth",
-          "resourceName": "amplifytripsplannere57d0b5c"
+          "resourceName": "mytrips293aad1a"
         }
       ],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [],
-          "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authamplifytripsplannere57d0b5c"
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authmytrips293aad1a"
+              }
             }
+          ],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
           }
         }
       },
@@ -26,7 +33,7 @@
     }
   },
   "auth": {
-    "amplifytripsplannere57d0b5c": {
+    "mytrips293aad1a": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -54,7 +61,7 @@
     }
   },
   "storage": {
-    "s3757c69ca": {
+    "tripppppppp123456789": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "S3"

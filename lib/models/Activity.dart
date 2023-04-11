@@ -42,9 +42,14 @@ class Activity extends Model {
   @override
   getInstanceType() => classType;
   
+  @Deprecated('[getId] is being deprecated in favor of custom primary key feature. Use getter [modelIdentifier] to get model identifier.')
   @override
-  String getId() {
-    return id;
+  String getId() => id;
+  
+  ActivityModelIdentifier get modelIdentifier {
+      return ActivityModelIdentifier(
+        id: id
+      );
   }
   
   String get activityName {
@@ -174,9 +179,9 @@ class Activity extends Model {
     return buffer.toString();
   }
   
-  Activity copyWith({String? id, String? activityName, Trip? trip, String? activityImageUrl, String? activityImageKey, TemporalDate? activityDate, TemporalTime? activityTime, ActivityCategory? category}) {
+  Activity copyWith({String? activityName, Trip? trip, String? activityImageUrl, String? activityImageKey, TemporalDate? activityDate, TemporalTime? activityTime, ActivityCategory? category}) {
     return Activity._internal(
-      id: id ?? this.id,
+      id: id,
       activityName: activityName ?? this.activityName,
       trip: trip ?? this.trip,
       activityImageUrl: activityImageUrl ?? this.activityImageUrl,
@@ -208,6 +213,7 @@ class Activity extends Model {
     'id': id, 'activityName': _activityName, 'trip': _trip, 'activityImageUrl': _activityImageUrl, 'activityImageKey': _activityImageKey, 'activityDate': _activityDate, 'activityTime': _activityTime, 'category': _category, 'createdAt': _createdAt, 'updatedAt': _updatedAt
   };
 
+  static final QueryModelIdentifier<ActivityModelIdentifier> MODEL_IDENTIFIER = QueryModelIdentifier<ActivityModelIdentifier>();
   static final QueryField ID = QueryField(fieldName: "id");
   static final QueryField ACTIVITYNAME = QueryField(fieldName: "activityName");
   static final QueryField TRIP = QueryField(
@@ -251,7 +257,7 @@ class Activity extends Model {
     modelSchemaDefinition.addField(ModelFieldDefinition.belongsTo(
       key: Activity.TRIP,
       isRequired: true,
-      targetName: 'tripID',
+      targetNames: ['tripID'],
       ofModelName: 'Trip'
     ));
     
@@ -313,4 +319,48 @@ class _ActivityModelType extends ModelType<Activity> {
   String modelName() {
     return 'Activity';
   }
+}
+
+/**
+ * This is an auto generated class representing the model identifier
+ * of [Activity] in your schema.
+ */
+@immutable
+class ActivityModelIdentifier implements ModelIdentifier<Activity> {
+  final String id;
+
+  /** Create an instance of ActivityModelIdentifier using [id] the primary key. */
+  const ActivityModelIdentifier({
+    required this.id});
+  
+  @override
+  Map<String, dynamic> serializeAsMap() => (<String, dynamic>{
+    'id': id
+  });
+  
+  @override
+  List<Map<String, dynamic>> serializeAsList() => serializeAsMap()
+    .entries
+    .map((entry) => (<String, dynamic>{ entry.key: entry.value }))
+    .toList();
+  
+  @override
+  String serializeAsString() => serializeAsMap().values.join('#');
+  
+  @override
+  String toString() => 'ActivityModelIdentifier(id: $id)';
+  
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    
+    return other is ActivityModelIdentifier &&
+      id == other.id;
+  }
+  
+  @override
+  int get hashCode =>
+    id.hashCode;
 }

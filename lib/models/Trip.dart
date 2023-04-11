@@ -43,9 +43,14 @@ class Trip extends Model {
   @override
   getInstanceType() => classType;
   
+  @Deprecated('[getId] is being deprecated in favor of custom primary key feature. Use getter [modelIdentifier] to get model identifier.')
   @override
-  String getId() {
-    return id;
+  String getId() => id;
+  
+  TripModelIdentifier get modelIdentifier {
+      return TripModelIdentifier(
+        id: id
+      );
   }
   
   String get tripName {
@@ -174,9 +179,9 @@ class Trip extends Model {
     return buffer.toString();
   }
   
-  Trip copyWith({String? id, String? tripName, String? destination, TemporalDate? startDate, TemporalDate? endDate, String? tripImageUrl, String? tripImageKey, List<Activity>? Activities}) {
+  Trip copyWith({String? tripName, String? destination, TemporalDate? startDate, TemporalDate? endDate, String? tripImageUrl, String? tripImageKey, List<Activity>? Activities}) {
     return Trip._internal(
-      id: id ?? this.id,
+      id: id,
       tripName: tripName ?? this.tripName,
       destination: destination ?? this.destination,
       startDate: startDate ?? this.startDate,
@@ -211,6 +216,7 @@ class Trip extends Model {
     'id': id, 'tripName': _tripName, 'destination': _destination, 'startDate': _startDate, 'endDate': _endDate, 'tripImageUrl': _tripImageUrl, 'tripImageKey': _tripImageKey, 'Activities': _Activities, 'createdAt': _createdAt, 'updatedAt': _updatedAt
   };
 
+  static final QueryModelIdentifier<TripModelIdentifier> MODEL_IDENTIFIER = QueryModelIdentifier<TripModelIdentifier>();
   static final QueryField ID = QueryField(fieldName: "id");
   static final QueryField TRIPNAME = QueryField(fieldName: "tripName");
   static final QueryField DESTINATION = QueryField(fieldName: "destination");
@@ -312,4 +318,48 @@ class _TripModelType extends ModelType<Trip> {
   String modelName() {
     return 'Trip';
   }
+}
+
+/**
+ * This is an auto generated class representing the model identifier
+ * of [Trip] in your schema.
+ */
+@immutable
+class TripModelIdentifier implements ModelIdentifier<Trip> {
+  final String id;
+
+  /** Create an instance of TripModelIdentifier using [id] the primary key. */
+  const TripModelIdentifier({
+    required this.id});
+  
+  @override
+  Map<String, dynamic> serializeAsMap() => (<String, dynamic>{
+    'id': id
+  });
+  
+  @override
+  List<Map<String, dynamic>> serializeAsList() => serializeAsMap()
+    .entries
+    .map((entry) => (<String, dynamic>{ entry.key: entry.value }))
+    .toList();
+  
+  @override
+  String serializeAsString() => serializeAsMap().values.join('#');
+  
+  @override
+  String toString() => 'TripModelIdentifier(id: $id)';
+  
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    
+    return other is TripModelIdentifier &&
+      id == other.id;
+  }
+  
+  @override
+  int get hashCode =>
+    id.hashCode;
 }

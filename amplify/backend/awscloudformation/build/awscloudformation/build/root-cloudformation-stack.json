@@ -152,15 +152,15 @@
         }
       }
     },
-    "authamplifytripsplannere57d0b5c": {
+    "authmytrips293aad1a": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-amplifytripsplanner-dev-150438-deployment/amplify-cfn-templates/auth/amplifytripsplannere57d0b5c-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-mytrips-mydev-162511-deployment/amplify-cfn-templates/auth/mytrips293aad1a-cloudformation-template.json",
         "Parameters": {
-          "identityPoolName": "amplifytripsplannere57d0b5c_identitypool_e57d0b5c",
+          "identityPoolName": "mytrips293aad1a_identitypool_293aad1a",
           "allowUnauthenticatedIdentities": true,
-          "resourceNameTruncated": "amplife57d0b5c",
-          "userPoolName": "amplifytripsplannere57d0b5c_userpool_e57d0b5c",
+          "resourceNameTruncated": "mytrip293aad1a",
+          "userPoolName": "mytrips293aad1a_userpool_293aad1a",
           "autoVerifiedAttributes": "email",
           "mfaConfiguration": "OFF",
           "mfaTypes": "SMS Text Message",
@@ -177,10 +177,10 @@
           "userpoolClientRefreshTokenValidity": 30,
           "userpoolClientWriteAttributes": "email",
           "userpoolClientReadAttributes": "email",
-          "userpoolClientLambdaRole": "amplife57d0b5c_userpoolclient_lambda_role",
+          "userpoolClientLambdaRole": "mytrip293aad1a_userpoolclient_lambda_role",
           "userpoolClientSetAttributes": false,
-          "sharedId": "e57d0b5c",
-          "resourceName": "amplifytripsplannere57d0b5c",
+          "sharedId": "293aad1a",
+          "resourceName": "mytrips293aad1a",
           "authSelections": "identityPoolAndUserPool",
           "useDefault": "default",
           "usernameAttributes": "email",
@@ -202,36 +202,36 @@
           },
           "breakCircularDependency": true,
           "dependsOn": "",
-          "env": "dev"
+          "env": "mydev"
         }
       }
     },
-    "apiamplifytripsplanner": {
+    "apimytrips": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-amplifytripsplanner-dev-150438-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-mytrips-mydev-162511-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
-          "AppSyncApiName": "amplifytripsplanner",
+          "AppSyncApiName": "mytrips",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
           "AuthCognitoUserPoolId": {
             "Fn::GetAtt": [
-              "authamplifytripsplannere57d0b5c",
+              "authmytrips293aad1a",
               "Outputs.UserPoolId"
             ]
           },
-          "S3DeploymentBucket": "amplify-amplifytripsplanner-dev-150438-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/1a57089942610566dc4b25852ecca20815a48c90",
-          "env": "dev"
+          "S3DeploymentBucket": "amplify-mytrips-mydev-162511-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/a2677baeb81ea324838242d60bed1590dee3d18c",
+          "env": "mydev"
         }
       }
     },
-    "storages3757c69ca": {
+    "storagetripppppppp123456789": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-amplifytripsplanner-dev-150438-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-mytrips-mydev-162511-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "Parameters": {
-          "bucketName": "amplifytripsplannerfee9472c6d3d4611b409fb0595c1",
+          "bucketName": "mytrips8fecd4972caf45cea0b99bcbf2845d2d",
           "selectedGuestPermissions": "s3:GetObject,s3:ListBucket",
           "selectedAuthenticatedPermissions": "s3:PutObject,s3:GetObject,s3:ListBucket,s3:DeleteObject",
           "unauthRoleName": {
@@ -240,13 +240,13 @@
           "authRoleName": {
             "Ref": "AuthRoleName"
           },
-          "s3PrivatePolicy": "Private_policy_757c69ca",
-          "s3ProtectedPolicy": "Protected_policy_757c69ca",
-          "s3PublicPolicy": "Public_policy_757c69ca",
-          "s3ReadPolicy": "read_policy_757c69ca",
-          "s3UploadsPolicy": "Uploads_policy_757c69ca",
-          "authPolicyName": "s3_amplify_757c69ca",
-          "unauthPolicyName": "s3_amplify_757c69ca",
+          "s3PrivatePolicy": "Private_policy_b139f812",
+          "s3ProtectedPolicy": "Protected_policy_b139f812",
+          "s3PublicPolicy": "Public_policy_b139f812",
+          "s3ReadPolicy": "read_policy_b139f812",
+          "s3UploadsPolicy": "Uploads_policy_b139f812",
+          "authPolicyName": "s3_amplify_b139f812",
+          "unauthPolicyName": "s3_amplify_b139f812",
           "AuthenticatedAllowList": "ALLOW",
           "GuestAllowList": "ALLOW",
           "s3PermissionsAuthenticatedPrivate": "s3:PutObject,s3:GetObject,s3:DeleteObject",
@@ -255,7 +255,7 @@
           "s3PermissionsAuthenticatedUploads": "s3:PutObject",
           "s3PermissionsGuestPublic": "s3:GetObject",
           "s3PermissionsGuestUploads": "DISALLOW",
-          "env": "dev"
+          "env": "mydev"
         }
       }
     },
@@ -263,7 +263,7 @@
       "DependsOn": [
         "AuthRole",
         "UnauthRole",
-        "authamplifytripsplannere57d0b5c"
+        "authmytrips293aad1a"
       ],
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -358,7 +358,7 @@
         },
         "idpId": {
           "Fn::GetAtt": [
-            "authamplifytripsplannere57d0b5c",
+            "authmytrips293aad1a",
             "Outputs.IdentityPoolId"
           ]
         },
