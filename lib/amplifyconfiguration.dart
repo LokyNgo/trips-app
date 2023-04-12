@@ -65,6 +65,12 @@ const amplifyconfig = ''' {
                         "Region": "us-east-1",
                         "AuthMode": "AMAZON_COGNITO_USER_POOLS",
                         "ClientDatabasePrefix": "tnttrips_AMAZON_COGNITO_USER_POOLS"
+                    },
+                    "tnttrips_AWS_IAM": {
+                        "ApiUrl": "https://o5arhaopu5hadeha2bzcwhvzte.appsync-api.us-east-1.amazonaws.com/graphql",
+                        "Region": "us-east-1",
+                        "AuthMode": "AWS_IAM",
+                        "ClientDatabasePrefix": "tnttrips_AWS_IAM"
                     }
                 },
                 "S3TransferUtility": {

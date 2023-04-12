@@ -48,6 +48,14 @@ class MyNavigationDrawer extends ConsumerWidget {
             },
           ),
           ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Settings'),
+              onTap: () {
+                context.goNamed(
+                  AppRoute.profile.name,
+                );
+              }),
+          ListTile(
             leading: const Icon(Icons.exit_to_app),
             title: const Text('Logout'),
             onTap: () => ref.read(authServiceProvider).signOut(),

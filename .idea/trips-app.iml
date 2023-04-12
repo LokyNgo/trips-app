@@ -69,6 +69,14 @@
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/amplify_storage_s3_ios/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/amplify_storage_s3_ios/build" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/amplify_storage_s3_ios/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/amplify/backend/api/tnttrips/build" />
+      <excludeFolder url="file://$MODULE_DIR$/amplify/backend/auth/tnttrips904bae71/build" />
+      <excludeFolder url="file://$MODULE_DIR$/amplify/backend/awscloudformation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/amplify/backend/storage/tntTrips220223/build" />
+      <excludeFolder url="file://$MODULE_DIR$/amplify/#current-cloud-backend" />
+      <excludeFolder url="file://$MODULE_DIR$/android/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/Pods" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

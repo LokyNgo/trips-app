@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "tnttrips",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authtnttrips904bae71",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2023-04-12T01:42:56.660Z"
+}

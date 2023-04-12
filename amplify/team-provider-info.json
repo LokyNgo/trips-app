@@ -1,0 +1,33 @@
+{
+  "tntdev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tnttrips-tntdev-212953-authRole",
+      "UnauthRoleArn": "arn:aws:iam::067907718005:role/amplify-tnttrips-tntdev-212953-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::067907718005:role/amplify-tnttrips-tntdev-212953-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tnttrips-tntdev-212953-deployment",
+      "UnauthRoleName": "amplify-tnttrips-tntdev-212953-unauthRole",
+      "StackName": "amplify-tnttrips-tntdev-212953",
+      "StackId": "arn:aws:cloudformation:us-east-1:067907718005:stack/amplify-tnttrips-tntdev-212953/56343a30-d875-11ed-b61b-0aa13dc638cf",
+      "AmplifyAppId": "d10rloeyn5dmod",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-tnttrips-tntdev-212953-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "tnttrips904bae71": {}
+      },
+      "api": {
+        "tnttrips": {}
+      },
+      "storage": {
+        "tntTrips220223": {}
+      },
+      "function": {
+        "tnttrips904bae71PostConfirmation": {
+          "deploymentBucketName": "amplify-tnttrips-tntdev-212953-deployment",
+          "s3Key": "amplify-builds/tnttrips904bae71PostConfirmation-6531434764644f6f7573-build.zip"
+        }
+      }
+    }
+  }
+}

@@ -27,6 +27,8 @@ class AuthService {
   Future<void> signOut() async {
     try {
       await Amplify.Auth.signOut();
+
+      /// Should not clear offline data in Handy Library Online app when sign out
       await Amplify.DataStore.clear();
     } on Exception catch (e) {
       debugPrint(e.toString());
