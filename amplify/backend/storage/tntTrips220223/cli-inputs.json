@@ -1,0 +1,15 @@
+{
+  "resourceName": "tntTrips220223",
+  "policyUUID": "3bbd57f8",
+  "bucketName": "tnttrips402aaf2f462a4f3f8252d3ee23ac5102",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {}
+}
