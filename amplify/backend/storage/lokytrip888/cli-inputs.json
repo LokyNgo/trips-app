@@ -1,7 +1,7 @@
 {
-  "resourceName": "tntTrips220223",
-  "policyUUID": "3bbd57f8",
-  "bucketName": "tnttrips402aaf2f462a4f3f8252d3ee23ac5102",
+  "resourceName": "lokytrip888",
+  "policyUUID": "2e4e984c",
+  "bucketName": "lokytripsappa4e7cb55b3f44efbbbc03d1ab1302a10",
   "storageAccess": "authAndGuest",
   "guestAccess": [
     "READ"
@@ -11,5 +11,6 @@
     "READ",
     "DELETE"
   ],
+  "triggerFunction": "NONE",
   "groupAccess": {}
 }

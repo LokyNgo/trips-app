@@ -1,4 +1,6 @@
-type Trip @model @auth(rules: [{ allow: owner }]) {
+type Trip @model @auth(rules: [
+    { allow: owner },
+]) {
     id: ID!
     tripName: String!
     destination: String!
@@ -9,7 +11,9 @@ type Trip @model @auth(rules: [{ allow: owner }]) {
     Activities: [Activity] @hasMany(indexName: "byTrip", fields: ["id"])
 }
 
-type Activity @model @auth(rules: [{allow: owner}]) {
+type Activity @model @auth(rules: [
+    { allow: owner }
+]) {
     id: ID!
     activityName: String!
     tripID: ID! @index(name: "byTrip", sortKeyFields: ["activityName"])
@@ -22,8 +26,10 @@ type Activity @model @auth(rules: [{allow: owner}]) {
 }
 
 type Profile @model @auth(rules: [
-    { allow: private, provider: iam }
-    { allow: owner, operations: [read, update, create] }]) {
+        { allow: private, provider: iam },
+        { allow: owner, operations: [read, update, create] }
+    ]
+) {
     id: ID!
     email: String!
     firstName: String
@@ -32,6 +38,4 @@ type Profile @model @auth(rules: [
     owner: String!
 }
 
-
 enum ActivityCategory { Flight, Lodging, Meeting, Restaurant }
-

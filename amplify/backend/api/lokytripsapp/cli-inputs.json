@@ -1,11 +1,11 @@
 {
   "version": 1,
   "serviceConfiguration": {
-    "apiName": "tnttrips",
+    "apiName": "lokytripsapp",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "AMAZON_COGNITO_USER_POOLS",
-      "cognitoUserPoolId": "authtnttrips904bae71"
+      "mode": "API_KEY",
+      "expirationTime": 7
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
@@ -13,6 +13,10 @@
       }
     },
     "additionalAuthTypes": [
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authlokytripsapp7281505f"
+      },
       {
         "mode": "AWS_IAM"
       }

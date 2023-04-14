@@ -1,12 +1,13 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "tnttrips": {
+    "lokytripsapp": {
       "GraphQLAPIEndpointOutput": "string",
-      "GraphQLAPIIdOutput": "string"
+      "GraphQLAPIIdOutput": "string",
+      "GraphQLAPIKeyOutput": "string"
     }
   },
   "auth": {
-    "tnttrips904bae71": {
+    "lokytripsapp7281505f": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
       "IdentityPoolId": "string",
@@ -16,17 +17,8 @@ export type AmplifyDependentResourcesAttributes = {
       "UserPoolName": "string"
     }
   },
-  "function": {
-    "tnttrips904bae71PostConfirmation": {
-      "Arn": "string",
-      "LambdaExecutionRole": "string",
-      "LambdaExecutionRoleArn": "string",
-      "Name": "string",
-      "Region": "string"
-    }
-  },
   "storage": {
-    "tntTrips220223": {
+    "lokytrip888": {
       "BucketName": "string",
       "Region": "string"
     }

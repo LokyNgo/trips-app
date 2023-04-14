@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "tnttrips904bae71_identitypool_904bae71",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "tnttri904bae71",
-    "userPoolName": "tnttrips904bae71_userpool_904bae71",
+    "identityPoolName": "lokytripsapp7281505f_identitypool_7281505f",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "lokytr7281505f",
+    "userPoolName": "lokytripsapp7281505f_userpool_7281505f",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -14,7 +14,7 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Verification code for Handy Library app",
+    "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
@@ -31,12 +31,12 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "tnttri904bae71_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "lokytr7281505f_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "904bae71",
-    "resourceName": "tnttrips904bae71",
+    "sharedId": "7281505f",
+    "resourceName": "lokytripsapp7281505f",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "manual",
+    "useDefault": "default",
     "usernameAttributes": [
       "email"
     ],
@@ -57,31 +57,6 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": [
-      {
-        "category": "function",
-        "resourceName": "tnttrips904bae71PostConfirmation",
-        "triggerProvider": "Cognito",
-        "attributes": [
-          "Arn",
-          "Name"
-        ]
-      }
-    ],
-    "thirdPartyAuth": false,
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "triggers": {
-      "PostConfirmation": [
-        "custom"
-      ]
-    },
-    "hostedUI": false,
-    "authProviders": [],
-    "parentStack": {
-      "Ref": "AWS::StackId"
-    },
-    "permissions": [],
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"tnttrips904bae71PostConfirmation\"\n  }\n]"
+    "dependsOn": []
   }
 }

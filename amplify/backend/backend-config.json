@@ -1,27 +1,33 @@
 {
   "api": {
-    "tnttrips": {
+    "lokytripsapp": {
       "dependsOn": [
         {
           "attributes": [
             "UserPoolId"
           ],
           "category": "auth",
-          "resourceName": "tnttrips904bae71"
+          "resourceName": "lokytripsapp7281505f"
         }
       ],
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authlokytripsapp7281505f"
+              }
+            },
+            {
               "authenticationType": "AWS_IAM"
             }
           ],
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authtnttrips904bae71"
-            }
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
           }
         }
       },
@@ -30,19 +36,9 @@
     }
   },
   "auth": {
-    "tnttrips904bae71": {
+    "lokytripsapp7281505f": {
       "customAuth": false,
-      "dependsOn": [
-        {
-          "attributes": [
-            "Arn",
-            "Name"
-          ],
-          "category": "function",
-          "resourceName": "tnttrips904bae71PostConfirmation",
-          "triggerProvider": "Cognito"
-        }
-      ],
+      "dependsOn": [],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -67,43 +63,8 @@
       "service": "Cognito"
     }
   },
-  "function": {
-    "tnttrips904bae71PostConfirmation": {
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput"
-          ],
-          "category": "api",
-          "resourceName": "tnttrips"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_tnttrips904bae71PostConfirmation_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "tnttrips904bae71PostConfirmation"
-        }
-      ]
-    },
-    "AMPLIFY_function_tnttrips904bae71PostConfirmation_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "tnttrips904bae71PostConfirmation"
-        }
-      ]
-    }
-  },
   "storage": {
-    "tntTrips220223": {
+    "lokytrip888": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "S3"
