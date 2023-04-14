@@ -9,6 +9,9 @@ import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'amplifyconfiguration.dart';
 
+import 'package:amplify_datastore/amplify_datastore.dart';
+import 'package:amplify_api/amplify_api.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
@@ -25,9 +28,14 @@ Future<void> main() async {
 }
 
 Future<void> _configureAmplify() async {
+  // TODO: change cache strategy
+  // final dataStorePlugin =
+
   await Amplify.addPlugins([
     AmplifyAuthCognito(),
-    AmplifyDataStore(modelProvider: ModelProvider.instance),
+    AmplifyDataStore(
+      modelProvider: ModelProvider.instance,
+    ),
     AmplifyAPI(),
     AmplifyStorageS3()
   ]);

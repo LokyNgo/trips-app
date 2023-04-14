@@ -8,8 +8,7 @@ const amplifyconfig = ''' {
                     "endpointType": "GraphQL",
                     "endpoint": "https://ubnca3g3djdzxcs2wd4sc3eiou.appsync-api.us-east-1.amazonaws.com/graphql",
                     "region": "us-east-1",
-                    "authorizationType": "API_KEY",
-                    "apiKey": "da2-nysdul3rgnfr5kod5krqzvllfe"
+                    "authorizationType": "AMAZON_COGNITO_USER_POOLS"
                 }
             }
         }
@@ -62,13 +61,6 @@ const amplifyconfig = ''' {
                 },
                 "AppSync": {
                     "Default": {
-                        "ApiUrl": "https://ubnca3g3djdzxcs2wd4sc3eiou.appsync-api.us-east-1.amazonaws.com/graphql",
-                        "Region": "us-east-1",
-                        "AuthMode": "API_KEY",
-                        "ApiKey": "da2-nysdul3rgnfr5kod5krqzvllfe",
-                        "ClientDatabasePrefix": "lokytripsapp_API_KEY"
-                    },
-                    "lokytripsapp_AMAZON_COGNITO_USER_POOLS": {
                         "ApiUrl": "https://ubnca3g3djdzxcs2wd4sc3eiou.appsync-api.us-east-1.amazonaws.com/graphql",
                         "Region": "us-east-1",
                         "AuthMode": "AMAZON_COGNITO_USER_POOLS",

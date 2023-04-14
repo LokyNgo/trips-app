@@ -11,6 +11,16 @@
     "READ",
     "DELETE"
   ],
-  "triggerFunction": "NONE",
-  "groupAccess": {}
+  "groupAccess": {
+    "Tenant1": [
+      "CREATE_AND_UPDATE",
+      "READ",
+      "DELETE"
+    ],
+    "Tenant2": [
+      "CREATE_AND_UPDATE",
+      "READ",
+      "DELETE"
+    ]
+  }
 }

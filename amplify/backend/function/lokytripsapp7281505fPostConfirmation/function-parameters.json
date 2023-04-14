@@ -1,0 +1,26 @@
+{
+  "trigger": true,
+  "modules": [
+    "add-to-group",
+    "custom"
+  ],
+  "parentResource": "lokytripsapp7281505f",
+  "functionName": "lokytripsapp7281505fPostConfirmation",
+  "resourceName": "lokytripsapp7281505fPostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "/snapshot/repo/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "lokytripsapp7281505fPostConfirmation",
+  "skipEdit": true,
+  "permissions": {
+    "api": {
+      "lokytripsapp": [
+        "Query",
+        "Mutation",
+        "Subscription"
+      ]
+    }
+  }
+}

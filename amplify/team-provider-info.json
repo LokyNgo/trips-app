@@ -9,17 +9,26 @@
       "UnauthRoleName": "amplify-lokytripsapp-dev-142833-unauthRole",
       "StackName": "amplify-lokytripsapp-dev-142833",
       "StackId": "arn:aws:cloudformation:us-east-1:067907718005:stack/amplify-lokytripsapp-dev-142833/f883e890-da95-11ed-9f94-12662ecb3025",
-      "AmplifyAppId": "dx0u29gkas108"
+      "AmplifyAppId": "dx0u29gkas108",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-lokytripsapp-dev-142833-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "lokytripsapp7281505f": {}
+        "lokytripsapp7281505f": {},
+        "userPoolGroups": {}
       },
       "api": {
         "lokytripsapp": {}
       },
       "storage": {
         "lokytrip888": {}
+      },
+      "function": {
+        "lokytripsapp7281505fPostConfirmation": {
+          "GROUP": "Tenant1",
+          "deploymentBucketName": "amplify-lokytripsapp-dev-142833-deployment",
+          "s3Key": "amplify-builds/lokytripsapp7281505fPostConfirmation-4742446276555a72374b-build.zip"
+        }
       }
     }
   }

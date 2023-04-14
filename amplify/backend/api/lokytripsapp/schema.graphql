@@ -1,5 +1,6 @@
 type Trip @model @auth(rules: [
     { allow: owner },
+    { allow: groups, groups:["Tenant1"] }
 ]) {
     id: ID!
     tripName: String!
@@ -36,6 +37,7 @@ type Profile @model @auth(rules: [
     lastName: String
     homeCity: String
     owner: String!
+
 }
 
 enum ActivityCategory { Flight, Lodging, Meeting, Restaurant }

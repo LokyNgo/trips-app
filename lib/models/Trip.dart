@@ -242,6 +242,17 @@ class Trip extends Model {
           ModelOperation.UPDATE,
           ModelOperation.DELETE,
           ModelOperation.READ
+        ]),
+      AuthRule(
+        authStrategy: AuthStrategy.GROUPS,
+        groupClaim: "cognito:groups",
+        groups: [ "Tenant1" ],
+        provider: AuthRuleProvider.USERPOOLS,
+        operations: [
+          ModelOperation.CREATE,
+          ModelOperation.UPDATE,
+          ModelOperation.DELETE,
+          ModelOperation.READ
         ])
     ];
     
