@@ -1,10 +1,15 @@
 [
   {
+    "groupName": "userpoolAdmins",
+    "precedence": 1,
+    "customPolicies": []
+  },
+  {
     "groupName": "Tenant1",
-    "precedence": 1
+    "precedence": 2
   },
   {
     "groupName": "Tenant2",
-    "precedence": 2
+    "precedence": 3
   }
 ]

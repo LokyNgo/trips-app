@@ -18,7 +18,8 @@
         "userPoolGroups": {}
       },
       "api": {
-        "lokytripsapp": {}
+        "lokytripsapp": {},
+        "AdminQueries": {}
       },
       "storage": {
         "lokytrip888": {}
@@ -27,7 +28,11 @@
         "lokytripsapp7281505fPostConfirmation": {
           "GROUP": "Tenant1",
           "deploymentBucketName": "amplify-lokytripsapp-dev-142833-deployment",
-          "s3Key": "amplify-builds/lokytripsapp7281505fPostConfirmation-4742446276555a72374b-build.zip"
+          "s3Key": "amplify-builds/lokytripsapp7281505fPostConfirmation-5845722f5671707a3552-build.zip"
+        },
+        "AdminQueries99e7b47c": {
+          "deploymentBucketName": "amplify-lokytripsapp-dev-142833-deployment",
+          "s3Key": "amplify-builds/AdminQueries99e7b47c-34714a2b787269677470-build.zip"
         }
       }
     }

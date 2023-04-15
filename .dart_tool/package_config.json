@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "amazon_cognito_identity_dart_2",
+      "rootUri": "file:///Users/tnt/.pub-cache/hosted/pub.dev/amazon_cognito_identity_dart_2-1.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.13"
+    },
+    {
       "name": "amplify_api",
       "rootUri": "file:///Users/tnt/.pub-cache/hosted/pub.dev/amplify_api-0.6.13",
       "packageUri": "lib/",
@@ -150,6 +156,12 @@
       "rootUri": "file:///Users/tnt/.pub-cache/hosted/pub.dev/collection-1.17.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "convert",
+      "rootUri": "file:///Users/tnt/.pub-cache/hosted/pub.dev/convert-3.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
     },
     {
       "name": "cross_file",
@@ -602,7 +614,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-04-12T07:52:00.319185Z",
+  "generated": "2023-04-15T03:13:15.744751Z",
   "generator": "pub",
   "generatorVersion": "2.19.4"
 }

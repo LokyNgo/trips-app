@@ -11,6 +11,12 @@ class TripsPlannerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Authenticator(
+      signUpForm: SignUpForm.custom(fields: [
+        SignUpFormField.username(),
+        SignUpFormField.preferredUsername(),
+        SignUpFormField.password(),
+        SignUpFormField.passwordConfirmation(),
+      ]),
       child: MaterialApp.router(
         routerConfig: router,
         builder: Authenticator.builder(),

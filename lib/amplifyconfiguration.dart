@@ -9,6 +9,12 @@ const amplifyconfig = ''' {
                     "endpoint": "https://ubnca3g3djdzxcs2wd4sc3eiou.appsync-api.us-east-1.amazonaws.com/graphql",
                     "region": "us-east-1",
                     "authorizationType": "AMAZON_COGNITO_USER_POOLS"
+                },
+                "AdminQueries": {
+                    "endpointType": "REST",
+                    "endpoint": "https://i3iqf70v4l.execute-api.us-east-1.amazonaws.com/dev",
+                    "region": "us-east-1",
+                    "authorizationType": "AMAZON_COGNITO_USER_POOLS"
                 }
             }
         }

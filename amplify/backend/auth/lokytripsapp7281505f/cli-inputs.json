@@ -2,7 +2,7 @@
   "version": "1",
   "cognitoConfig": {
     "identityPoolName": "lokytripsapp7281505f_identitypool_7281505f",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "lokytr7281505f",
     "userPoolName": "lokytripsapp7281505f_userpool_7281505f",
     "autoVerifiedAttributes": [
@@ -26,10 +26,12 @@
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
+      "preferred_username",
       "email"
     ],
     "userpoolClientReadAttributes": [
-      "email"
+      "email",
+      "preferred_username"
     ],
     "userpoolClientLambdaRole": "lokytr7281505f_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": true,
@@ -41,6 +43,7 @@
       "email"
     ],
     "userPoolGroupList": [
+      "userpoolAdmins",
       "Tenant1",
       "Tenant2"
     ],
@@ -73,7 +76,7 @@
     ],
     "thirdPartyAuth": false,
     "userPoolGroups": false,
-    "adminQueries": false,
+    "adminQueries": true,
     "triggers": {
       "PostConfirmation": [
         "add-to-group",
@@ -86,10 +89,9 @@
       "Ref": "AWS::StackId"
     },
     "permissions": [
-      "{\"policyName\":\"AddToGroupCognito\",\"trigger\":\"PostConfirmation\",\"effect\":\"Allow\",\"actions\":[\"cognito-idp:AdminAddUserToGroup\",\"cognito-idp:GetGroup\",\"cognito-idp:CreateGroup\"],\"resource\":{\"paramType\":\"!GetAtt\",\"keys\":[\"UserPool\",\"Arn\"]}}"
+      "{\n  \"policyName\": \"AddToGroupCognito\",\n  \"trigger\": \"PostConfirmation\",\n  \"effect\": \"Allow\",\n  \"actions\": [\n    \"cognito-idp:AdminAddUserToGroup\",\n    \"cognito-idp:GetGroup\",\n    \"cognito-idp:CreateGroup\"\n  ],\n  \"resource\": {\n    \"paramType\": \"!GetAtt\",\n    \"keys\": [\n      \"UserPool\",\n      \"Arn\"\n    ]\n  }\n}"
     ],
-    "authTriggerConnections": [
-      "{\"triggerType\":\"PostConfirmation\",\"lambdaFunctionName\":\"lokytripsapp7281505fPostConfirmation\"}"
-    ]
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"lokytripsapp7281505fPostConfirmation\"\n  }\n]",
+    "adminQueryGroup": "userpoolAdmins"
   }
 }

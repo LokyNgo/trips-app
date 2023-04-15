@@ -1,3 +1,7 @@
+amazon_cognito_identity_dart_2
+2.13
+file:///Users/tnt/.pub-cache/hosted/pub.dev/amazon_cognito_identity_dart_2-1.0.5/
+file:///Users/tnt/.pub-cache/hosted/pub.dev/amazon_cognito_identity_dart_2-1.0.5/lib/
 amplify_api
 2.15
 file:///Users/tnt/.pub-cache/hosted/pub.dev/amplify_api-0.6.13/
@@ -98,6 +102,10 @@ collection
 2.12
 file:///Users/tnt/.pub-cache/hosted/pub.dev/collection-1.17.0/
 file:///Users/tnt/.pub-cache/hosted/pub.dev/collection-1.17.0/lib/
+convert
+2.18
+file:///Users/tnt/.pub-cache/hosted/pub.dev/convert-3.1.1/
+file:///Users/tnt/.pub-cache/hosted/pub.dev/convert-3.1.1/lib/
 cross_file
 2.17
 file:///Users/tnt/.pub-cache/hosted/pub.dev/cross_file-0.3.3+4/

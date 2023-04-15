@@ -1,5 +1,27 @@
 {
   "api": {
+    "AdminQueries": {
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "lokytripsapp7281505f"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "AdminQueries99e7b47c"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "lokytripsapp": {
       "dependsOn": [
         {
@@ -84,6 +106,20 @@
     }
   },
   "function": {
+    "AdminQueries99e7b47c": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "lokytripsapp7281505f"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "lokytripsapp7281505fPostConfirmation": {
       "build": true,
       "dependsOn": [
@@ -101,6 +137,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_AdminQueries99e7b47c_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueries99e7b47c"
+        }
+      ]
+    },
+    "AMPLIFY_function_AdminQueries99e7b47c_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueries99e7b47c"
+        }
+      ]
+    },
     "AMPLIFY_function_lokytripsapp7281505fPostConfirmation_GROUP": {
       "usedBy": [
         {

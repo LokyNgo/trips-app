@@ -1,6 +1,7 @@
 import 'package:amplify_api/amplify_api.dart';
 import 'package:amplify_datastore/amplify_datastore.dart';
 import 'package:amplify_storage_s3/amplify_storage_s3.dart';
+import 'package:amplify_trips_planner/common/utils/user_pools_admin_api.dart';
 import 'package:amplify_trips_planner/models/ModelProvider.dart';
 import 'package:amplify_trips_planner/trips_planner_app.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +9,7 @@ import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'amplifyconfiguration.dart';
-
-import 'package:amplify_datastore/amplify_datastore.dart';
-import 'package:amplify_api/amplify_api.dart';
+import 'common/utils/decode_utils.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -66,11 +65,28 @@ Future<void> fetchAuthSession() async {
       const Duration(seconds: 5),
     );
     final currentSession = result as CognitoAuthSession;
+
+    String idToken = currentSession.userPoolTokens?.idToken ?? '';
     String accessToken = currentSession.userPoolTokens?.accessToken ?? '';
     String identityId = currentSession.identityId ?? '';
-    safePrint('accessToken: $accessToken');
-    safePrint('identityId: $identityId');
+
+    debugPrint('fetchAuthSession(), idToken: $idToken');
+    debugPrint('fetchAuthSession(), accessToken: $accessToken');
+    debugPrint('fetchAuthSession(), identityId: $identityId');
+
+    // Parse the Json Web Token (JWT)
+    final decodedIdToken = DecodeUtils.decodeJWT(idToken);
+    final decodedAccessToken = DecodeUtils.decodeJWT(accessToken);
+    debugPrint("decodedIdToken = $decodedIdToken");
+    debugPrint("decodedAccessToken = $decodedAccessToken");
+    final userGroup = decodedIdToken['cognito:groups'];
+    debugPrint('userGroup = $userGroup');
+
+    if (userGroup == "userpoolAdmins") {
+      // account: loky@bookshare.app
+      UserPoolsAdminAPI.listAllGroups();
+    }
   } catch (e) {
-    safePrint('$e');
+    debugPrint('$e');
   }
 }
